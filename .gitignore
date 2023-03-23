@@ -40,5 +40,5 @@ build/
 ### IDEA ###
 .idea
 
-### properties ###
-framework.properties
+#### properties ###
+#framework.properties

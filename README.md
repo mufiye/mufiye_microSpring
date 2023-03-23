@@ -10,9 +10,13 @@
 
 ### Console Part
 
-1. 进入我提供的[micro_spring样例目录](https://github.com/mufiye/mufiye_microSpring/tree/master/micro_spring/src/main/java/org/example/mufiye/microSpring/test)
+1. 进入[micro_spring](https://github.com/mufiye/mufiye_microSpring/tree/master/micro_spring)模块目录，对该模块进行编译
 
-2. 运行App.java，此时基于micro_spring的样例代码开始运行
+   ```
+   mvn clean package
+   ```
+
+2. 进入我提供的[micro_spring样例目录](https://github.com/mufiye/mufiye_microSpring/tree/master/micro_spring/src/main/java/org/example/mufiye/microSpring/test)运行App.java，此时基于micro_spring的样例代码开始运行
 
 3. 使用console进行交互 - save存入一个字段
 
@@ -38,9 +42,14 @@
 
 ### Web Part
 
-1. 进入我提供的[micro_spring样例目录](https://github.com/mufiye/mufiye_microSpring/tree/master/micro_spring/src/main/java/org/example/mufiye/microSpring/test)
 
-2. 运行App.java，此时基于micro_spring的样例代码开始运行
+1. 进入[micro_spring](https://github.com/mufiye/mufiye_microSpring/tree/master/micro_spring)模块目录，对该模块进行编译
+
+   ```
+   mvn clean package
+   ```
+
+2. 进入我提供的[micro_spring样例目录](https://github.com/mufiye/mufiye_microSpring/tree/master/micro_spring/src/main/java/org/example/mufiye/microSpring/test)运行App.java，此时基于micro_spring的样例代码开始运行
 
 3. web交互 - save存入一个字段
 

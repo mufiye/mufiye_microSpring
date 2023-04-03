@@ -13,10 +13,7 @@ public class ParseUtil {
 	public static Object parseObject(Class<?> parameterType, String para) {
 		Object passPara;
 		if (parameterType == int.class) {
-			log.info("into parse int");
-			log.info("para: {}", para);
 			passPara = Integer.parseInt(para);
-			log.info("end parse int");
 		}
 		else if (parameterType == double.class) {
 			passPara = Double.parseDouble(para);

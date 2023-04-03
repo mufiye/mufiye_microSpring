@@ -56,18 +56,13 @@ public class HttpInputEvent implements RegeditEvent {
 				switch (uriParam.length) {
 					case 2:
 						String param = uriParam[1];
-						log.info("uri Param[1]: {}", uriParam[1]);
 						String[] params = param.split(SignConst.PARAMETER_SEPARATOR);
 
 						for (String kv : params) {
-							log.info("kv of params: {}", kv);
 							String[] KV = kv.split(SignConst.KEY_VALUE_SEPARATOR);
-							log.info("KV[0]: {}, KV[1]: {}", KV[0], KV[1]);
 							paramsMap.put(KV[0], KV[1]);
 						}
 					case 1:
-						log.info("parasMap: {}", paramsMap);
-						log.info("uri Param[0]: {}", uriParam[0]);
 						String mapper = uriParam[0];
 						Method m = controllerMapper.get(mapper);
 						log.info("method's name: {}", m.getName());
@@ -84,20 +79,14 @@ public class HttpInputEvent implements RegeditEvent {
 						Object[] passParams = new Object[parameters.length];
 						int i = 0;
 						for (Parameter parameter : parameters) {
-							log.info("parameter.getName(): {}", parameter.getName());
 							String value = paramsMap.get(parameter.getName());
-							log.info("parsing parameter");
-							log.info("value: {}", value);
 							Object o = ParseUtil.parseObject(parameter.getType(), value);
-							log.info("end parsing parameter");
 							passParams[i++] = o;
 						}
-						log.info("out of parsing parameter");
 						Class<?> declaringClass = m.getDeclaringClass();
 						ComponentFactory factory = InstanceUtil.getInstance(ComponentFactory.class);
 						Object controller = factory.getBean(declaringClass);
 						try {
-							log.info("调用m.invoke");
 							Object returnValue = m.invoke(controller, passParams);
 							String rv = (String) returnValue;
 							ByteBuf content = Unpooled.wrappedBuffer(rv.getBytes(StandardCharsets.UTF_8));
